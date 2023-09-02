@@ -1,32 +1,72 @@
-*.el
-*.ipr
+# ---- Gradle
+build/
+.gradle/
+.gradletasknamecache
+classes/
+out/
+
+# ---- Maven (in integration tests)
+target/
+
+# ---- IntelliJ IDEA
 *.iws
-*.pif
-*.snap
-.ant.properties
+*.iml
+*.ipr
+.idea/
+.attach_pid*
+out/
+
+# ---- VS Code
+.vscode/
+*.code-workspace
+
+# Directories generated on build on Windows
+bin/
+!sonar-application/src/main/assembly/elasticsearch/**/bin/
+!sonar-application/src/main/assembly/elasticsearch-patch/**/bin/
+
+# npm logs
+npm-debug.log*
+npm.tar.gz
+yarn-debug.log*
+yarn-error.log*
+
+# ---- Eclipse
 .classpath
-.DS_Store
 .project
 .settings
-bin
-apache-ant-1.*
-bootstrap
-build
-dist
-distribution
-java-repository
-patch.tar.gz
-patch.txt
-target
-velocity.log*
-lib/optional/*.jar
-src/tests/antunit/core/output
-.idea
-*.iml
-/src/GPATH
-/src/GRTAGS
-/src/GSYMS
-/src/GTAGS
-/log.xml
-lib/optional/license.txt
-/release/distrib/
+.externalToolBuilders
+
+# ---- Mac OS X
+.DS_Store
+# Thumbnails
+._*
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# ---- Windows
+# Windows image file caches
+Thumbs.db 
+# Folder config file
+Desktop.ini
+
+# ---- Linux
+.directory
+
+# ---- frontend
+node/
+node_modules/
+install-state.gz
+
+# ---- SonarQube
+.sonar/
+.scannerwork/
+
+# scripts patches, they are local to each developer
+scripts/patches/*.*
+scripts/patches/*license*.txt
+!scripts/patches/debug_ce.sh
+!scripts/patches/debug_web.sh
+!scripts/patches/postgres.sh
+gherkin-features/
